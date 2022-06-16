@@ -67,13 +67,7 @@ public class PhoneController {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
+
 
 	// 전화번호 등록(파라미터 사용)
 	@RequestMapping(value="/write2", method={RequestMethod.GET, RequestMethod.POST})

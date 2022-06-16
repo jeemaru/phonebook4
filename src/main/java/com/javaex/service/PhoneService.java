@@ -43,11 +43,6 @@ public class PhoneService {
 	
 	
 	
-	
-	
-	
-	
-	
 	//전화번호 삭제
 	public int personDelete(int no) {
 		
@@ -58,7 +53,7 @@ public class PhoneService {
 	
 	//전화번호 수정폼(정보가져오기)
 	public PersonVo getPerson(int no) {
-		
+		System.out.println("PhoneService>getperson()");
 		PersonVo personVo = phoneDao.getPerson(no);
 		
 		return personVo;
