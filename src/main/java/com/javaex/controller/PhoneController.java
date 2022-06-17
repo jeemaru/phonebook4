@@ -1,6 +1,7 @@
 package com.javaex.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -143,6 +144,17 @@ public class PhoneController {
 		model.addAttribute("personVo", personVo);
 
 		return "updateForm";
+	}
+	
+	@RequestMapping(value="/updateForm2", method= {RequestMethod.GET,RequestMethod.POST})
+	public String updateForm2(Model model, @RequestParam("no") int no) {
+		System.out.println("PhoneController>updateForm2()");
+		
+		Map<String, Object> pMap = phoneService.getPerson2(no);
+		
+		model.addAllAttributes("pMap", pMap);	
+		
+		return "updateForm2";
 	}
 
 	// 전화번호 수정

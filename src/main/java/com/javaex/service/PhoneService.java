@@ -1,6 +1,9 @@
 package com.javaex.service;
 
+//import java.util.HashMap;
 import java.util.List;
+//import java.util.Map;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -41,6 +44,19 @@ public class PhoneService {
 		return count;
 	}
 	
+	//전화번호 등록(map을 사용하는 가상의 상황)
+	
+	/*
+	 * public int personInsert2() {
+	 * System.out.println("PhoneService>personInsert2()");
+	 * 
+	 * Map<String, String> pMap = new HashMap<String, String>(); pMap.put("name",
+	 * "황일영"); pMap.put("hp", "010-4444-5555"); pMap.put("company", "02-123-1115");
+	 * 
+	 * int count = phoneDao.personInsert2(pMap);
+	 * 
+	 * return count; }
+	 */
 	
 	
 	//전화번호 삭제
@@ -57,6 +73,13 @@ public class PhoneService {
 		PersonVo personVo = phoneDao.getPerson(no);
 		
 		return personVo;
+	}
+	
+	public Map<String, Object> getPerson2(int no) {
+		System.out.println("PhoneService>getperson2()");
+		Map<String, Object> pMap = phoneDao.getPersonList(no);
+		
+		return pMap;
 	}
 	
 	//전화번호 수정
